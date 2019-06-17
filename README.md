@@ -11,6 +11,7 @@ This code is responsible for fetching data on TheCatAPI, about breeds of cats. T
 Laravel:
 - PHP >= 7.1.3
 - Laravel >= 5.8
+- Laravel APIDoc Generator
 
 
 ## Installation
@@ -50,3 +51,7 @@ For Windows, you can run tests using the following command. It must be executed 
 ```bash
 "./vendor/bin/phpunit"
 ```
+
+## Documentation
+
+The API Docs can be accessed on the /api/public/docs/ folder of the project

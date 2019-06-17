@@ -1,0 +1,241 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/all.js"></script>
+
+
+          <script>
+        $(function() {
+            setupLanguages(["bash"]);
+        });
+      </script>
+      </head>
+
+  <body class="">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+                    <div class="lang-selector">
+                                  <a href="#" data-language-name="bash">bash</a>
+                                  <a href="#" data-language-name="javascript">javascript</a>
+                            </div>
+                            <div class="search">
+              <input type="text" class="search" id="input-search" placeholder="Search">
+            </div>
+            <ul class="search-results"></ul>
+              <div id="toc">
+      </div>
+                    <ul class="toc-footer">
+                            </ul>
+            </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+         
+<h1>General</h1>
+<p>APIs for cats data</p>
+<!-- START_e8df87899e3c464b1ccbf8d0a2412b8f -->
+<h2>Search by name</h2>
+<p>This function return information about the provided similar name cats</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET -G "/breeds?name=sib" \
+    -H "Content-Type: application/json" \
+    -d '{"x-api-key":"1474c307-7ac9-4089-96e6-4988bd7dc046"}'
+</code></pre>
+
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">[
+    {
+        "breeds": [
+            {
+                "weight": {
+                    "imperial": "8 - 16",
+                    "metric": "4 - 7"
+                },
+                "id": "sibe",
+                "name": "Siberian",
+                "cfa_url": "http:\/\/cfa.org\/Breeds\/BreedsSthruT\/Siberian.aspx",
+                "vetstreet_url": "http:\/\/www.vetstreet.com\/cats\/siberian",
+                "vcahospitals_url": "https:\/\/vcahospitals.com\/know-your-pet\/cat-breeds\/siberian",
+                "temperament": "Curious, Intelligent, Loyal, Sweet, Agile, Playful, Affectionate",
+                "origin": "Russia",
+                "country_codes": "RU",
+                "country_code": "RU",
+                "description": "The Siberians dog like temperament and affection makes the ideal lap cat and will live quite happily indoors. Very agile and powerful, the Siberian cat can easily leap and reach high places, including the tops of refrigerators and even doors. ",
+                "life_span": "12 - 15",
+                "indoor": 0,
+                "lap": 1,
+                "alt_names": "Moscow Semi-longhair, HairSiberian Forest Cat",
+                "adaptability": 5,
+                "affection_level": 5,
+                "child_friendly": 4,
+                "dog_friendly": 5,
+                "energy_level": 5,
+                "grooming": 2,
+                "health_issues": 2,
+                "intelligence": 5,
+                "shedding_level": 3,
+                "social_needs": 4,
+                "stranger_friendly": 3,
+                "vocalisation": 1,
+                "experimental": 0,
+                "hairless": 0,
+                "natural": 1,
+                "rare": 0,
+                "rex": 0,
+                "suppressed_tail": 0,
+                "short_legs": 0,
+                "wikipedia_url": "https:\/\/en.wikipedia.org\/wiki\/Siberian_(cat)",
+                "hypoallergenic": 1
+            }
+        ],
+        "id": "qLPz9prjF",
+        "url": "https:\/\/cdn2.thecatapi.com\/images\/qLPz9prjF.jpg",
+        "width": 750,
+        "height": 937
+    }
+]</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET breeds</code></p>
+<h4>Body Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>x-api-key</td>
+<td>required</td>
+<td>optional</td>
+<td>Api Key.</td>
+</tr>
+</tbody>
+</table>
+<h4>Query Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>required</td>
+<td>Name of the cat to search.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_e8df87899e3c464b1ccbf8d0a2412b8f -->
+<!-- START_84e1bbe721bd43c7b6685773f3148b42 -->
+<h2>Search by id</h2>
+<p>This function return information about the provided id cat</p>
+<blockquote>
+<p>Example request:</p>
+</blockquote>
+<pre><code class="language-bash">curl -X GET -G "/breeds/sibe" </code></pre>
+
+<blockquote>
+<p>Example response (200):</p>
+</blockquote>
+<pre><code class="language-json">[
+    {
+        "breeds": [
+            {
+                "weight": {
+                    "imperial": "8 - 16",
+                    "metric": "4 - 7"
+                },
+                "id": "sibe",
+                "name": "Siberian",
+                "cfa_url": "http:\/\/cfa.org\/Breeds\/BreedsSthruT\/Siberian.aspx",
+                "vetstreet_url": "http:\/\/www.vetstreet.com\/cats\/siberian",
+                "vcahospitals_url": "https:\/\/vcahospitals.com\/know-your-pet\/cat-breeds\/siberian",
+                "temperament": "Curious, Intelligent, Loyal, Sweet, Agile, Playful, Affectionate",
+                "origin": "Russia",
+                "country_codes": "RU",
+                "country_code": "RU",
+                "description": "The Siberians dog like temperament and affection makes the ideal lap cat and will live quite happily indoors. Very agile and powerful, the Siberian cat can easily leap and reach high places, including the tops of refrigerators and even doors. ",
+                "life_span": "12 - 15",
+                "indoor": 0,
+                "lap": 1,
+                "alt_names": "Moscow Semi-longhair, HairSiberian Forest Cat",
+                "adaptability": 5,
+                "affection_level": 5,
+                "child_friendly": 4,
+                "dog_friendly": 5,
+                "energy_level": 5,
+                "grooming": 2,
+                "health_issues": 2,
+                "intelligence": 5,
+                "shedding_level": 3,
+                "social_needs": 4,
+                "stranger_friendly": 3,
+                "vocalisation": 1,
+                "experimental": 0,
+                "hairless": 0,
+                "natural": 1,
+                "rare": 0,
+                "rex": 0,
+                "suppressed_tail": 0,
+                "short_legs": 0,
+                "wikipedia_url": "https:\/\/en.wikipedia.org\/wiki\/Siberian_(cat)",
+                "hypoallergenic": 1
+            }
+        ],
+        "id": "qLPz9prjF",
+        "url": "https:\/\/cdn2.thecatapi.com\/images\/qLPz9prjF.jpg",
+        "width": 750,
+        "height": 937
+    }
+]</code></pre>
+<h3>HTTP Request</h3>
+<p><code>GET breeds/{id}</code></p>
+<h4>Query Parameters</h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Status</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td>required</td>
+<td>Id of the cat to search.</td>
+</tr>
+</tbody>
+</table>
+<!-- END_84e1bbe721bd43c7b6685773f3148b42 -->
+      </div>
+      <div class="dark-box">
+                        <div class="lang-selector">
+                                    <a href="#" data-language-name="bash">bash</a>
+                              </div>
+                </div>
+    </div>
+  </body>
+</html>

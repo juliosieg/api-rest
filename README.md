@@ -2,6 +2,10 @@
   
 This API's purpose is to provide information about cats based on TheCatAPI data.  
 
+## The problem and how it was solved
+
+This code is responsible for fetching data on TheCatAPI, about breeds of cats. The requested races are passed by parameter in the API call URL. However, care must be taken to cache the information so that you do not have to make too many API requests for information that you have previously searched for. For this, with each call of the URL, a check in the database is made to know if the information already exists. If the answer is no, the data is searched in TheCatAPI and if the results are as expected, these results will be saved in the database for future reference.
+
 ## Requirements
 
 Laravel:

@@ -42,3 +42,11 @@ php artisan serve --host 192.168.0.100 --port 8000
 ```  
 
 **Note:**  `host` and `port` are optional parameters. By default, `serve` runs the application at http://localhost:8000.
+
+## Testing
+
+For Windows, you can run tests using the following command. It must be executed on the root directory.
+
+```bash
+"./vendor/bin/phpunit"
+```

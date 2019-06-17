@@ -60,7 +60,15 @@ class CatsController extends Controller
                 //Se encontrou o termo, verifica se a quantidade é a mesma
                 $quantity_results = $search[0]->quantity_results;
 
-                if($countResultsCats == $quantity_results){
+                if($countResultsCats == $quantity_results and $countResultsCats == 0){
+
+                    $findNewResults = false;
+
+                    return response()->json([
+                        'message' => 'Not found'
+                    ], 404);
+
+                }if($countResultsCats == $quantity_results){
 
                     $findNewResults = false;
 
@@ -96,7 +104,11 @@ class CatsController extends Controller
                 curl_close($curl);
 
                 if ($err) {
-                    // Curl Error
+                    
+                    return response()->json([
+                        'message' => 'Internal Server Error'
+                    ], 500);
+
                 } else {
                 
                     $search = new Search;
@@ -176,7 +188,7 @@ class CatsController extends Controller
                         
                     }
 
-                    return response()->json($response, 200);
+                    return response($response, 200);
                 }
             }
         }else{

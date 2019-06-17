@@ -10,6 +10,8 @@ This code is responsible for fetching data on TheCatAPI, about breeds of cats. T
 
 Laravel:
 - PHP >= 7.1.3
+- Laravel >= 5.8
+
 
 ## Installation
 
@@ -23,6 +25,11 @@ Afterwards, generate the app key:
 ```bash
 php artisan key:generate
 ```  
+
+For generate the database, and create tables, run:
+```bash
+php artisan migrate
+```
 
 **Note:** dependency conflicts may appear during update. In that case, delete the *composer.lock* file and run `composer install`.
 
